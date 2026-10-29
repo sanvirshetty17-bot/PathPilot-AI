@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathPilot AI — Your Career Roadmap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home">✦ PathPilot <span>AI</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#careers">Explore Careers</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+    <a class="btn" href="#assessment">Build my roadmap →</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">✦ YOUR FUTURE, WITH A PLAN</p>
+        <h1>Your career.<br>Your roadmap.<br><span>Your future.</span></h1>
+        <p class="description">Turn your ambitions into action. Get a personalized learning path to the career you want, one step at a time.</p>
+        <div class="actions">
+          <a class="btn" href="#assessment">Build my roadmap →</a>
+          <a class="btn secondary" href="#careers">Explore careers ↘</a>
+        </div>
+        <p class="note">✧ Learn at your pace. Build with purpose.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-icon">✦</div>
+        <p class="eyebrow">YOUR NEXT CHAPTER</p>
+        <h2>Software Developer</h2>
+        <p class="muted">A path made for your goals.</p>
+        <div class="progress"><span></span></div>
+        <div class="preview-task">✓ <div><strong>Build your foundation</strong><small>Core programming skills</small></div></div>
+        <div class="preview-task">02 <div><strong>Practice with projects</strong><small>Turn knowledge into action</small></div></div>
+        <div class="preview-task">03 <div><strong>Prepare for opportunities</strong><small>Portfolio and interview prep</small></div></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><strong>◎ Made for your goals</strong><small>A plan that starts with you</small></div>
+      <div><strong>⌁ Learn step by step</strong><small>Clear learning milestones</small></div>
+      <div><strong>↗ Track your progress</strong><small>Celebrate completed tasks</small></div>
+    </section>
+
+    <section class="section" id="careers">
+      <p class="eyebrow">FIND YOUR DIRECTION</p>
+      <h2>Which future feels like <span>you?</span></h2>
+      <p class="muted">Explore popular paths and discover the skills you'll need.</p>
+      <div class="career-grid" id="careerGrid"></div>
+    </section>
+
+    <section class="assessment" id="assessment">
+      <div class="assessment-copy">
+        <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+        <h2>Let's make a plan that fits <span>your life.</span></h2>
+        <p>Tell us where you are and where you want to go. We'll turn it into a practical learning roadmap.</p>
+        <p>✧ No perfect starting point needed. Your roadmap can grow as you do.</p>
+      </div>
+      <form id="roadmapForm">
+        <p class="eyebrow">PERSONALIZED ROADMAP</p>
+        <h3>Tell us about yourself</h3>
+
+        <label for="careerGoal">What's your target career?</label>
+        <select id="careerGoal" required>
+          <option value="">Choose a career</option>
+          <option value="software">Software Developer</option>
+          <option value="web">Web Developer</option>
+          <option value="data">Data Analyst</option>
+          <option value="ai">AI / ML Engineer</option>
+          <option value="cyber">Cybersecurity Analyst</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label for="education">Current education</label>
+            <select id="education" required>
+              <option value="">Choose level</option>
+              <option>High school</option>
+              <option>Diploma</option>
+              <option>Undergraduate</option>
+              <option>Graduate</option>
+              <option>Working professional</option>
+            </select>
+          </div>
+          <div>
+            <label for="experience">Experience level</label>
+            <select id="experience" required>
+              <option value="">Choose level</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="skills">Skills you already know (optional)</label>
+        <input id="skills" type="text" placeholder="e.g. C, HTML, problem solving">
+
+        <div class="form-row">
+          <div>
+            <label for="hours">Study hours per week</label>
+            <select id="hours" required>
+              <option value="">Choose hours</option>
+              <option value="3">1–3 hours</option>
+              <option value="6">4–6 hours</option>
+              <option value="10">7–10 hours</option>
+              <option value="15">10+ hours</option>
+            </select>
+          </div>
+          <div>
+            <label for="timeline">Target timeline</label>
+            <select id="timeline" required>
+              <option value="">Choose timeline</option>
+              <option value="3">3 months</option>
+              <option value="6">6 months</option>
+              <option value="9">9 months</option>
+              <option value="12">12 months</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="learningStyle">Preferred learning style</label>
+        <select id="learningStyle" required>
+          <option value="">Choose your style</option>
+          <option value="projects">Building projects</option>
+          <option value="videos">Videos and tutorials</option>
+          <option value="reading">Reading and notes</option>
+          <option value="mixed">A mix of everything</option>
+        </select>
+
+        <button class="btn full-width" type="submit" id="generateBtn">Generate my roadmap ✦</button>
+        <p class="form-footnote">Your progress is saved in this browser. No account required.</p>
+      </form>
+    </section>
+
+    <section class="section hidden" id="roadmap">
+      <p class="eyebrow">YOUR PERSONAL PLAN</p>
+      <h2>Your path, <span>mapped out.</span></h2>
+      <p class="muted" id="roadmapSubtitle"></p>
+      <div id="roadmapSummary" class="summary-grid"></div>
+      <div class="roadmap-layout">
+        <div class="panel">
+          <h3>Your learning journey</h3>
+          <p class="muted">Check off tasks as you complete them.</p>
+          <div id="phaseList"></div>
+        </div>
+        <aside class="panel">
+          <p class="eyebrow">YOUR PROGRESS</p>
+          <div class="progress-circle" id="progressCircle"><strong id="progressNumber">0%</strong></div>
+          <p id="progressMessage" class="muted">Every small step counts.</p>
+          <p>Tasks completed: <strong id="completedCount">0 / 0</strong></p>
+          <p>Study commitment: <strong id="studyCommitment">—</strong></p>
+          <hr>
+          <h3>Keep learning</h3>
+          <p class="muted">Explore free learning resources.</p>
+          <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs ↗</a><br>
+          <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener noreferrer">freeCodeCamp ↗</a>
+          <button class="btn full-width reset-btn" id="resetProgressBtn" type="button">Reset progress</button>
+          <button class="btn secondary full-width" id="newRoadmapBtn" type="button">Create another roadmap</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <p class="eyebrow">YOUR PERSONAL SPACE</p>
+      <h2>Your progress, <span>at a glance.</span></h2>
+      <p class="muted">Every completed task is a step closer to your goal.</p>
+      <div id="dashboardContent" class="dashboard-grid"></div>
+    </section>
+
+    <section class="bottom-cta">
+      <div><h2>Your next chapter starts with <span>one step.</span></h2><p>You don't need the whole journey figured out. Just a place to start.</p></div>
+      <a class="btn cta-btn" href="#assessment">Build my roadmap →</a>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home">✦ PathPilot <span>AI</span></a><p>Made for curious minds and ambitious futures.</p><small>© <span id="year"></span> PathPilot AI · Demo project</small></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
